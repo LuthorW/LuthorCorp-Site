@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LuthorCorporation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: #1f1e1e;
+            color: #f4f4f4;
+        }
+        header {
+            background: #191919;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            color: #4b1482;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #f4f4f4;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #4b1482;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #232323;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+        .about, .services, .contact {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #4b1482;
+            margin-bottom: 10px;
+        }
+        footer {
+            background: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px 5px 60px 5px;
+                padding: 10px;
+            }
+            header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center; justify-content: flex-start; gap: 16px;"></div>
+            <img src="https://i.pinimg.com/736x/93/78/fa/9378fa215f5d23bb38fc56e720b7ea80.jpg" width="60" alt="Logo" style="vertical-align: middle; border-radius: 50%;">
+            <h1 style="margin: 0; font-size: 2.5em; letter-spacing: 2px; color: #4b1482;">Luthor Corporation</h1>
+        </div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <p>
+                Luthor Corporation and technology is a leader in innovative solutions, dedicated to shaping the 
+                future through excellence, integrity, and vision. Our team is committed to delivering world-class products 
+                and services that empower businesses and communities worldwide. TESTE ICON.
+            </p>
+        </section>
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Advanced Research & Development</li>
+                <li>Enterprise Software Solutions</li>
+                <li>Consulting & Strategic Planning</li>
+                <li>Cybersecurity & Data Protection</li>
+            </ul>
+        </section>
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <p>
+                Email: <a href="mailto:leticia.alvesdanvers@gmail.com" style="color:#0b6d0e;">info@luthorcorp.com</a><br>
+                Phone: +1 (800) 555-1234<br>
+                Address: 123 Innovation Drive, Metropolis, NY 27620
+            </p>
+        </section>
+        <div style="margin-top: 10px; text-align: center;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/653px-Logo_of_AC_Milan.svg.png" width="35" alt="AC Milan Logo" style="vertical-align: middle; margin-right: 10px;">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/4/43/FCBarcelona.svg/1010px-FCBarcelona.svg.png" width="55" alt="FC Barcelona Logo" style="vertical-align: middle;">
+            <p style="margin: 8px 0 0 0;"><small>Partner of AC Milan and FC Barcelona.</small></p>
+        </div>
+    </div>
+    <footer>
+        &copy; 2034 LuthorCorporation. All rights reserved.
+    </footer>
+</body>
+</html>
