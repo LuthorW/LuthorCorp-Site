@@ -253,14 +253,13 @@ h2::after {
     margin-bottom: 15px;
 }
 
-/* Descrição do Projeto (Invisível por padrão) */
 .project-description {
     font-size: 0.95em;
     line-height: 1.6;
     margin: 0;
     /* O truque acontece aqui: */
-    max-height: 0; /* Começa sem altura */
-    opacity: 0;    /* Começa totalmente transparente */
+    max-height: 0;
+    opacity: 0;  
     transition: max-height 0.4s ease, opacity 0.3s ease 0.1s;
 }
 
