@@ -1,32 +1,21 @@
-/* === Luthor Corp — Visual Corporativo Aprimorado === */
+/* === Luthor Corp — Versão Completa === */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 :root {
-    --bg: #0A0A0A; /* Fundo mais escuro */
-    --card: #141414; /* Cor dos cards/container */
+    --bg: #0A0A0A;
+    --card: #141414;
     --border: rgba(255, 255, 255, 0.1);
-    --accent: #00e676; /* Verde da sua logo */
+    --accent: #00e676;
     --accent-hover: #33ff99;
     --text: #f1f1f1;
     --muted: #888;
     --transition: 0.3s ease;
+    --shadow-color: rgba(0, 230, 118, 0.1);
 }
 
-/* Animações Keyframes */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 * {
@@ -35,18 +24,33 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Roboto", "Segoe UI", Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
-    /* Animação de entrada suave */
     animation: fadeIn 1s ease-in-out;
+}
+
+/* ===== ANIMAÇÃO DE ROLAGEM (CONTROLADO VIA JS) ===== */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ===== HEADER ===== */
 header {
-    background: #111;
+    background: rgba(10, 10, 10, 0.7);
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
@@ -81,10 +85,10 @@ header .brand h1 {
     font-weight: 700;
 }
 
-/* ===== NAV ===== */
 nav {
     display: flex;
-    gap: 30px;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -117,31 +121,20 @@ nav a:hover::after {
 
 /* ===== CONTAINER E SEÇÕES ===== */
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 40px auto;
     padding: 20px;
 }
 
 section {
-    margin-bottom: 70px;
-    /* Animação de entrada para seções */
-    animation: slideInUp 0.8s ease-out forwards;
-    opacity: 0; /* Começa invisível */
+    margin-bottom: 90px;
 }
-
-/* Atraso na animação para cada seção */
-section:nth-of-type(1) { animation-delay: 0.2s; }
-section:nth-of-type(2) { animation-delay: 0.4s; }
-section:nth-of-type(3) { animation-delay: 0.6s; }
-section:nth-of-type(4) { animation-delay: 0.8s; }
-section:nth-of-type(5) { animation-delay: 1.0s; }
-
 
 h2 {
     font-size: 2.2em;
     text-align: center;
     color: var(--text);
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     position: relative;
 }
 
@@ -172,7 +165,7 @@ h2::after {
 }
 
 .hero h2::after {
-    display: none; /* Remove o sublinhado do h2 padrão */
+    display: none;
 }
 
 .hero p {
@@ -183,7 +176,7 @@ h2::after {
 /* ===== SERVICE CARDS ===== */
 .service-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
 }
 
@@ -198,7 +191,7 @@ h2::after {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 230, 118, 0.1);
+    box-shadow: 0 10px 20px var(--shadow-color);
 }
 
 .card i {
@@ -218,7 +211,101 @@ h2::after {
     font-size: 0.9em;
 }
 
-/* ===== PARTNERS ===== */
+/* ===== PROJECT SECTION ===== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 40px 20px 20px;
+    color: white;
+    transform: translateY(30%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.project-card:hover .project-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.project-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.project-info p {
+    color: var(--muted);
+}
+
+/* ===== TEAM SECTION ===== */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.team-member {
+    text-align: center;
+    background: var(--card);
+    padding: 30px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    font-size: 1.4em;
+    color: var(--text);
+}
+
+.team-member p {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* ===== PARTNERS & CONTACT & FOOTER ===== */
 .partners .partner-logos {
     display: flex;
     justify-content: center;
@@ -241,7 +328,6 @@ h2::after {
     transform: scale(1.1);
 }
 
-/* ===== CONTACT & FOOTER ===== */
 .contact {
     text-align: center;
     background: var(--card);
@@ -270,14 +356,11 @@ footer {
 }
 
 /* ===== RESPONSIVO ===== */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     header {
         flex-direction: column;
         gap: 15px;
         padding: 15px;
-    }
-    nav {
-        gap: 20px;
     }
     .container {
         margin: 20px 15px;

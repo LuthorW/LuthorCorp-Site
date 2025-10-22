@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/png" href="favicon.ico">
-
     <link rel="stylesheet" href="style.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
@@ -20,6 +18,8 @@
         <nav>
             <a href="#about">Sobre</a>
             <a href="#services">Soluções</a>
+            <a href="#projects">Projetos</a>
+            <a href="#team">Equipe</a>
             <a href="#contact">Contato</a>
         </nav>
     </header>
@@ -32,7 +32,7 @@
             </div>
         </section>
 
-        <section id="about" class="about">
+        <section id="about" class="about reveal-on-scroll">
             <h2>Sobre Nós</h2>
             <p>
                 A Luthor Corporation é líder global em soluções tecnológicas inovadoras, dedicada a moldar o 
@@ -41,7 +41,7 @@
             </p>
         </section>
         
-        <section id="services" class="services">
+        <section id="services" class="services reveal-on-scroll">
             <h2>Nossas Soluções</h2>
             <div class="service-cards">
                 <div class="card">
@@ -67,7 +67,55 @@
             </div>
         </section>
 
-        <section id="partners" class="partners">
+        <section id="projects" class="projects reveal-on-scroll">
+            <h2>Projetos de Destaque</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/00e676/white?text=Projeto+Alpha" alt="Projeto Alpha">
+                    <div class="project-info">
+                        <h3>Projeto Artemis</h3>
+                        <p>Infraestrutura de Rede Global</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/141414/white?text=Projeto+Omega" alt="Projeto Omega">
+                    <div class="project-info">
+                        <h3>Projeto Atena</h3>
+                        <p>Inteligência Artificial Preditiva</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/0A0A0A/white?text=Projeto+Sigma" alt="Projeto Sigma">
+                    <div class="project-info">
+                        <h3>Projeto Prometheus</h3>
+                        <p>Soluções de Energia Limpa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="team reveal-on-scroll">
+            <h2>Equipe Executiva</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://placehold.co/400x400/141414/00e676?text=L.L." alt="Foto de um membro da equipe">
+                    <h3>Letícia Luthor</h3>
+                    <p>CEO & Visionária Chefe</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/400x400/141414/FFFFFF?text=L.W." alt="Foto de um membro da equipe">
+                    <h3>Lucy Williams</h3>
+                    <p>Chefe de Operações (COO)</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/400x400/141414/FFFFFF?text=J.D." alt="Foto de um membro da equipe">
+                    <h3>Samantha Arias</h3>
+                    <p>Chefe de Tecnologia (CTO)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="partners" class="partners reveal-on-scroll">
              <h2>Parceiros Globais</h2>
              <div class="partner-logos">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/653px-Logo_of_AC_Milan.svg.png" width="55" alt="AC Milan Logo" title="AC Milan">
@@ -75,7 +123,7 @@
             </div>
         </section>
         
-        <section id="contact" class="contact">
+        <section id="contact" class="contact reveal-on-scroll">
             <h2>Contato</h2>
             <p>
                 <strong>Email:</strong> <a href="mailto:info@luthorcorp.com">info@luthorcorp.com</a><br>
@@ -88,5 +136,7 @@
     <footer>
         &copy; 2034 Luthor Corporation. Todos os direitos reservados.
     </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
