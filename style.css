@@ -219,49 +219,29 @@ h2::after {
 }
 
 .project-card {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    padding: 20px;
+    text-align: center;
+    background-color: #1c1c1e;
+    color: var(--text);
     border-radius: 8px;
-    overflow: hidden;
     border: 1px solid var(--border);
+    transition: all 0.4s ease;
 }
 
-.project-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
+.project-card:hover {
+    background-color: #c8b6ff;
+    color: #141414;
+    transform: translateY(-5px);
+    cursor: pointer;
 }
 
-.project-card:hover img {
-    transform: scale(1.1);
-}
-
-.project-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-    padding: 40px 20px 20px;
-    color: white;
-    transform: translateY(30%);
-    opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.project-card:hover .project-info {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.project-info h3 {
+.project-card h3 {
     font-size: 1.5em;
-    margin-bottom: 5px;
-}
-
-.project-info p {
-    color: var(--muted);
+    margin: 0;
 }
 
 /* ===== TEAM SECTION ===== */
