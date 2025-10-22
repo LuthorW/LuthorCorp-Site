@@ -1,12 +1,32 @@
-/* === Luthor Corp — Visual corporativo tech === */
+/* === Luthor Corp — Visual Corporativo Aprimorado === */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 :root {
-    --bg: #0f0f12;
-    --card: #1b1a1f;
-    --accent: #7a2cff;
-    --accent-hover: #a580ff;
+    --bg: #0A0A0A; /* Fundo mais escuro */
+    --card: #141414; /* Cor dos cards/container */
+    --border: rgba(255, 255, 255, 0.1);
+    --accent: #00e676; /* Verde da sua logo */
+    --accent-hover: #33ff99;
     --text: #f1f1f1;
-    --muted: #aaa;
+    --muted: #888;
     --transition: 0.3s ease;
+}
+
+/* Animações Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 * {
@@ -16,49 +36,55 @@
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: "Roboto", "Segoe UI", Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
+    /* Animação de entrada suave */
+    animation: fadeIn 1s ease-in-out;
 }
 
 /* ===== HEADER ===== */
 header {
-    background: #141316;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: #111;
+    border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 40px;
-    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
 }
 
 header .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
 header .brand img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 10px rgba(122, 44, 255, 0.4);
+    width: 50px;
+    height: 50px;
+    transition: transform var(--transition);
+}
+
+header .brand img:hover {
+    transform: rotate(360deg) scale(1.1);
 }
 
 header .brand h1 {
     font-size: 1.8em;
-    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text);
     letter-spacing: 1px;
+    font-weight: 700;
 }
 
 /* ===== NAV ===== */
 nav {
     display: flex;
-    gap: 25px;
+    gap: 30px;
 }
 
 nav a {
@@ -66,7 +92,7 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     position: relative;
-    transition: var(--transition);
+    transition: color var(--transition);
 }
 
 nav a::after {
@@ -76,7 +102,8 @@ nav a::after {
     height: 2px;
     background: var(--accent);
     bottom: -5px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     transition: width var(--transition);
 }
 
@@ -88,82 +115,177 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* ===== CONTAINER ===== */
+/* ===== CONTAINER E SEÇÕES ===== */
 .container {
     max-width: 1000px;
-    margin: 60px auto;
-    background: var(--card);
-    border-radius: 10px;
-    padding: 40px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    margin: 40px auto;
+    padding: 20px;
 }
 
-/* ===== SECTIONS ===== */
 section {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
+    /* Animação de entrada para seções */
+    animation: slideInUp 0.8s ease-out forwards;
+    opacity: 0; /* Começa invisível */
 }
+
+/* Atraso na animação para cada seção */
+section:nth-of-type(1) { animation-delay: 0.2s; }
+section:nth-of-type(2) { animation-delay: 0.4s; }
+section:nth-of-type(3) { animation-delay: 0.6s; }
+section:nth-of-type(4) { animation-delay: 0.8s; }
+section:nth-of-type(5) { animation-delay: 1.0s; }
+
 
 h2 {
-    font-size: 1.6em;
+    font-size: 2.2em;
+    text-align: center;
+    color: var(--text);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: radial-gradient(circle, var(--card) 0%, var(--bg) 80%);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.hero h2 {
+    font-size: 2.8em;
+    background: linear-gradient(90deg, var(--accent), var(--text));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero h2::after {
+    display: none; /* Remove o sublinhado do h2 padrão */
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: var(--muted);
+}
+
+/* ===== SERVICE CARDS ===== */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 230, 118, 0.1);
+}
+
+.card i {
+    font-size: 2.5em;
     color: var(--accent);
-    border-left: 4px solid var(--accent);
-    padding-left: 10px;
     margin-bottom: 15px;
 }
 
-ul {
-    list-style: none;
-    padding-left: 10px;
+.card h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: var(--text);
 }
 
-ul li::before {
-    content: "▸ ";
-    color: var(--accent);
-}
-
-ul li {
-    margin: 8px 0;
+.card p {
+    color: var(--muted);
+    font-size: 0.9em;
 }
 
 /* ===== PARTNERS ===== */
-.partners {
-    text-align: center;
+.partners .partner-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
     margin-top: 20px;
+    filter: grayscale(80%) opacity(0.7);
+    transition: var(--transition);
+}
+
+.partners .partner-logos:hover {
+    filter: grayscale(0) opacity(1);
 }
 
 .partners img {
-    filter: grayscale(100%);
-    transition: var(--transition);
-    margin: 0 8px;
+    transition: transform var(--transition);
 }
 
 .partners img:hover {
-    filter: none;
     transform: scale(1.1);
 }
 
-/* ===== FOOTER ===== */
+/* ===== CONTACT & FOOTER ===== */
+.contact {
+    text-align: center;
+    background: var(--card);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.contact a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.contact a:hover {
+    color: var(--accent-hover);
+}
+
 footer {
     text-align: center;
     color: var(--muted);
     padding: 20px 0;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    background: #141316;
+    border-top: 1px solid var(--border);
+    background: #111;
+    font-size: 0.9em;
 }
 
 /* ===== RESPONSIVO ===== */
 @media (max-width: 700px) {
     header {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
+        gap: 15px;
+        padding: 15px;
     }
     nav {
-        gap: 15px;
+        gap: 20px;
     }
     .container {
-        padding: 25px;
-        margin: 30px 15px;
+        margin: 20px 15px;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .hero h2 {
+        font-size: 2.2em;
     }
 }

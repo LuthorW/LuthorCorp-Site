@@ -1,62 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Luthor Corp</title>
+    <title>Luthor Corporation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/png" href="favicon.ico">
 
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <header>
-    <div class="brand">
-        <img src="lexcorp.png" alt="Luthor Logo">
-        <h1>Luthor Corporation</h1>
-    </div>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-    </header>
-    <div class="container">
-        <section id="about" class="about">
-            <h2>About Us</h2>
-            <p>
-                Luthor Corporation and technology is a leader in innovative solutions, dedicated to shaping the 
-                future through excellence, integrity, and vision. Our team is committed to delivering world-class products 
-                and services that empower businesses and communities worldwide.
-            </p>
-        </section>
-        <section id="services" class="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Advanced Research & Development</li>
-                <li>Enterprise Software Solutions</li>
-                <li>Consulting & Strategic Planning</li>
-                <li>Cybersecurity & Data Protection</li>
-            </ul>
-        </section>
-        <section id="contact" class="contact">
-            <h2>Contact Us</h2>
-            <p>
-                Email: <a href="mailto:leticia.alvesdanvers@gmail.com" style="color:#0b6d0e;">info@luthorcorp.com</a><br>
-                Phone: +1 (310) 555-2711<br>
-                1200 West Cordova Street, National City
-            </p>
-        </section>
-        <div style="margin-top: 10px; text-align: center;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/653px-Logo_of_AC_Milan.svg.png" width="35" alt="AC Milan Logo" style="vertical-align: middle; margin-right: 10px;">
-            <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/4/43/FCBarcelona.svg/1010px-FCBarcelona.svg.png" width="55" alt="FC Barcelona Logo" style="vertical-align: middle;">
-            <p style="margin: 8px 0 0 0;"><small>Partner of AC Milan and FC Barcelona.</small></p>
+        <div class="brand">
+            <img src="lexcorp.png" alt="Luthor Logo">
+            <h1>Luthor Corporation</h1>
         </div>
-    </div>
+        <nav>
+            <a href="#about">Sobre</a>
+            <a href="#services">Soluções</a>
+            <a href="#contact">Contato</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h2>Moldando o Amanhã, Hoje.</h2>
+                <p>Inovação, poder e precisão. Bem-vindo ao futuro, bem-vindo à LuthorCorp.</p>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>Sobre Nós</h2>
+            <p>
+                A Luthor Corporation é líder global em soluções tecnológicas inovadoras, dedicada a moldar o 
+                futuro através da excelência, integridade e visão. Nossa equipe está comprometida em fornecer produtos 
+                e serviços de classe mundial que capacitam empresas e comunidades em todo o mundo.
+            </p>
+        </section>
+        
+        <section id="services" class="services">
+            <h2>Nossas Soluções</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Pesquisa e Desenvolvimento</h3>
+                    <p>Exploramos as fronteiras da ciência para criar as tecnologias que definirão a próxima geração.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Software Empresarial</h3>
+                    <p>Soluções de software robustas e escaláveis, projetadas para máxima eficiência e performance.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Segurança Cibernética</h3>
+                    <p>Proteção de dados de nível militar para defender seus ativos contra as ameaças mais avançadas.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Consultoria Estratégica</h3>
+                    <p>Nossa visão e expertise guiando sua empresa em direção ao crescimento e domínio de mercado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="partners" class="partners">
+             <h2>Parceiros Globais</h2>
+             <div class="partner-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/653px-Logo_of_AC_Milan.svg.png" width="55" alt="AC Milan Logo" title="AC Milan">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/4/43/FCBarcelona.svg/1010px-FCBarcelona.svg.png" width="75" alt="FC Barcelona Logo" title="FC Barcelona">
+            </div>
+        </section>
+        
+        <section id="contact" class="contact">
+            <h2>Contato</h2>
+            <p>
+                <strong>Email:</strong> <a href="mailto:info@luthorcorp.com">info@luthorcorp.com</a><br>
+                <strong>Telefone:</strong> +1 (310) 555-2711<br>
+                <strong>Sede:</strong> 1200 West Cordova Street, National City
+            </p>
+        </section>
+    </main>
+    
     <footer>
-        &copy; 2034 LuthorCorporation. All rights reserved.
+        &copy; 2034 Luthor Corporation. Todos os direitos reservados.
     </footer>
 </body>
 </html>
