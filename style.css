@@ -220,15 +220,18 @@ h2::after {
 
 .project-card {
     display: flex;
+    flex-direction: column; /* Organiza título e descrição um sobre o outro */
     align-items: center;
     justify-content: center;
     min-height: 200px;
-    padding: 20px;
+    padding: 30px 20px;
     text-align: center;
     background-color: #1c1c1e;
     color: var(--text);
     border-radius: 8px;
     border: 1px solid var(--border);
+    cursor: pointer;
+    overflow: hidden; /* Essencial para a animação de altura funcionar bem */
     transition: all 0.4s ease;
 }
 
@@ -236,12 +239,35 @@ h2::after {
     background-color: #c8b6ff;
     color: #141414;
     transform: translateY(-5px);
-    cursor: pointer;
 }
 
+/* Título do Projeto */
 .project-card h3 {
     font-size: 1.5em;
+    margin-bottom: 0;
+    transition: margin 0.4s ease;
+}
+
+/* Ao passar o mouse, o título ganha uma margem para dar espaço à descrição */
+.project-card:hover h3 {
+    margin-bottom: 15px;
+}
+
+/* Descrição do Projeto (Invisível por padrão) */
+.project-description {
+    font-size: 0.95em;
+    line-height: 1.6;
     margin: 0;
+    /* O truque acontece aqui: */
+    max-height: 0; /* Começa sem altura */
+    opacity: 0;    /* Começa totalmente transparente */
+    transition: max-height 0.4s ease, opacity 0.3s ease 0.1s;
+}
+
+/* Ao passar o mouse, a descrição se torna visível */
+.project-card:hover .project-description {
+    max-height: 150px; /* Damos uma altura máxima para ela poder aparecer */
+    opacity: 1;        /* A descrição se torna visível */
 }
 
 /* ===== TEAM SECTION ===== */
