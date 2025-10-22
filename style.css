@@ -1,11 +1,11 @@
-/* === LUTHOR CORP - Dark Futuristic Theme === */
+/* === Luthor Corp — Visual corporativo tech === */
 :root {
-    --bg-main: #0f0e11;
-    --bg-card: #1b1a1f;
+    --bg: #0f0f12;
+    --card: #1b1a1f;
     --accent: #7a2cff;
-    --accent-glow: #9c6eff;
-    --text-light: #f4f4f4;
-    --text-muted: #aaa;
+    --accent-hover: #a580ff;
+    --text: #f1f1f1;
+    --muted: #aaa;
     --transition: 0.3s ease;
 }
 
@@ -16,87 +16,154 @@
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: radial-gradient(circle at top left, #17161b, #0f0e11 80%);
-    color: var(--text-light);
-    overflow-x: hidden;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
 }
 
-/* ===== Header ===== */
+/* ===== HEADER ===== */
 header {
-    background: rgba(20, 18, 24, 0.95);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(122, 44, 255, 0.2);
-    padding: 15px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header div {
+    background: #141316;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 16px;
+    justify-content: space-between;
+    padding: 15px 40px;
+    flex-wrap: wrap;
 }
 
-header img {
+header .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+header .brand img {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    box-shadow: 0 0 12px var(--accent);
-    transition: transform var(--transition);
-}
-header img:hover {
-    transform: rotate(10deg) scale(1.05);
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(122, 44, 255, 0.4);
 }
 
-header h1 {
-    font-size: 2.3em;
-    letter-spacing: 2px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-glow));
+header .brand h1 {
+    font-size: 1.8em;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: glow 3s ease-in-out infinite alternate;
+    letter-spacing: 1px;
 }
 
-@keyframes glow {
-    from { text-shadow: 0 0 5px var(--accent); }
-    to { text-shadow: 0 0 20px var(--accent-glow); }
-}
-
-/* ===== Navigation ===== */
+/* ===== NAV ===== */
 nav {
-    margin-top: 12px;
+    display: flex;
+    gap: 25px;
 }
+
 nav a {
-    color: var(--text-light);
+    color: var(--text);
     text-decoration: none;
-    margin: 0 15px;
     font-weight: 600;
     position: relative;
-    transition: color var(--transition);
+    transition: var(--transition);
 }
+
 nav a::after {
     content: "";
     position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0%;
+    width: 0;
     height: 2px;
     background: var(--accent);
+    bottom: -5px;
+    left: 0;
     transition: width var(--transition);
 }
+
 nav a:hover {
     color: var(--accent);
 }
+
 nav a:hover::after {
     width: 100%;
 }
 
-/* ===== Container ===== */
+/* ===== CONTAINER ===== */
 .container {
-    max-width: 900px;
-    margin:
+    max-width: 1000px;
+    margin: 60px auto;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* ===== SECTIONS ===== */
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 1.6em;
+    color: var(--accent);
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+ul li::before {
+    content: "▸ ";
+    color: var(--accent);
+}
+
+ul li {
+    margin: 8px 0;
+}
+
+/* ===== PARTNERS ===== */
+.partners {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.partners img {
+    filter: grayscale(100%);
+    transition: var(--transition);
+    margin: 0 8px;
+}
+
+.partners img:hover {
+    filter: none;
+    transform: scale(1.1);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    background: #141316;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+    nav {
+        gap: 15px;
+    }
+    .container {
+        padding: 25px;
+        margin: 30px 15px;
+    }
 }
