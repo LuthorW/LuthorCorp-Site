@@ -1,0 +1,101 @@
+/* === LUTHOR CORP - Dark Futuristic Theme === */
+:root {
+    --bg-main: #0f0e11;
+    --bg-card: #1b1a1f;
+    --accent: #7a2cff;
+    --accent-glow: #9c6eff;
+    --text-light: #f4f4f4;
+    --text-muted: #aaa;
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: radial-gradient(circle at top left, #17161b, #0f0e11 80%);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+header {
+    background: rgba(20, 18, 24, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(122, 44, 255, 0.2);
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+header img {
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--accent);
+    transition: transform var(--transition);
+}
+header img:hover {
+    transform: rotate(10deg) scale(1.05);
+}
+
+header h1 {
+    font-size: 2.3em;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-glow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px var(--accent); }
+    to { text-shadow: 0 0 20px var(--accent-glow); }
+}
+
+/* ===== Navigation ===== */
+nav {
+    margin-top: 12px;
+}
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    position: relative;
+    transition: color var(--transition);
+}
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width var(--transition);
+}
+nav a:hover {
+    color: var(--accent);
+}
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 900px;
+    margin:
